@@ -1,0 +1,41 @@
+{
+  "name": "iobroker.hombot",
+  "version": "0.0.1",
+  "description": "LG HomBot Adapter",
+  "author": {
+    "name": "Alexander Gurtzick",
+    "email": "algu1@outlook.de"
+  },
+  "contributors": [
+    {
+      "name": "Alexander Gurtzick",
+      "email": "algu1@outlook.de"
+    }
+  ],
+  "homepage": "https://github.com/ioBroker/ioBroker.hombot",
+  "license": "MIT",
+  "keywords": [
+    "ioBroker",
+    "hombot",
+    "Smart Home",
+    "home automation"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ioBroker/ioBroker.hombot"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "mocha": "^4.1.0",
+    "chai": "^4.1.2"
+  },
+  "main": "main.js",
+  "scripts": {
+    "test": "node node_modules/mocha/bin/mocha --exit"
+  },
+  "bugs": {
+    "url": "https://github.com/ioBroker/ioBroker.hombot/issues"
+  },
+  "readmeFilename": "README.md"
+}

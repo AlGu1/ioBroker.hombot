@@ -1,0 +1,45 @@
+{
+    "common": {
+        "name": "hombot",
+        "version": "0.0.1",
+        "news": {
+            "0.0.1": {
+                "en": "initial adapter",
+                "de": "Initiale Version"
+            }
+        },
+		"title": "LG HomBot Adapter",
+        "titleLang": {
+            "en": "LG HomBot adapter",
+            "de": "LG HomBot Adapter"
+        },
+        "desc": {
+            "en": "LG HomBot adapter",
+            "de": "LG HomBot Adapter"
+        },
+        "authors": [
+            "Alexander Gurtzick <algu1@outlook.de>"
+        ],
+        "docs": {
+            "en": "docs/en/admin.md",
+            "de": "docs/de/admin.md"
+        },
+        "platform": "Javascript/Node.js",
+        "mode": "daemon",
+        "icon": "hombot.png",
+        "materialize": true,
+        "enabled": true,
+        "extIcon": "https://raw.githubusercontent.com/ioBroker/ioBroker.hombot/master/admin/hombot.png",
+        "keywords": ["LG HomBot"],
+        "readme": "https://github.com/ioBroker/ioBroker.hombot/blob/master/README.md",
+        "loglevel": "debug",
+        "type": "general",
+        "restartAdapters": ["vis"]
+    },
+    "native": {
+
+    },
+    "objects": [
+
+    ]
+}
