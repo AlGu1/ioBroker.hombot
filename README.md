@@ -2,7 +2,7 @@
 # ioBroker.hombot
 =================
 
-Dieser Adapter ermöglicht die Steuerung und das Auslesen eines LG HomBot Staubsauger-Roboters bei dem der WLAN-Hack 3.0
+Dieser Adapter ermöglicht die Steuerung und das Auslesen eines LG HomBot Staubsauger-Roboters bei dem der WLAN-Hack installiert ist.
 
 ## Requirements
 * Für die Nutzung dieses Adapters ist der WLAN Hack (http://www.roboter-forum.com/showthread.php?10009-LG-Hombot-3-0-WLAN-amp-Kamera-Steuerung-per-Weboberfläche) erforderlich.
