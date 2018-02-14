@@ -29,7 +29,7 @@
         "icon": "hombot.png",
         "materialize": true,
         "enabled": true,
-        "extIcon": "https://raw.githubusercontent.com/ioBroker/ioBroker.hombot/master/admin/hombot.png",
+        "extIcon": "https://github.com/AlGu1/hombot/raw/master/admin/hombot.png",
         "keywords": ["LG HomBot"],
         "readme": "https://github.com/ioBroker/ioBroker.hombot/blob/master/README.md",
         "loglevel": "debug",
