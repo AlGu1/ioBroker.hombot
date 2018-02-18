@@ -1,3 +1,21 @@
 .hombot-class {
-    font-style: italic;
+	color: rgb(255, 255, 255);
+}
+.hombotStatus {
+	padding: 2px 0px 2px 0px;
+}
+.hombotImage {
+	display:inline;
+	float:left;
+}
+.hombotButton {
+	border:0px !important;
+	background: #adadad url("../../../widgets/hombot/img/buttonBackground.png") 50% 50% repeat-x !important;
+    color: #333 !important;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+	margin: 1px;
+	position: inherit !important;
 }

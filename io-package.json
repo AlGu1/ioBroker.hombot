@@ -1,8 +1,12 @@
 {
     "common": {
         "name": "hombot",
-        "version": "0.0.1",
+        "version": "0.0.2",
         "news": {
+			"0.0.2": {
+                "en": "Add many functions and vis widget",
+                "de": "Sehr viele Funktionen und ein Vis-Widget hinzugefügt "
+            },
             "0.0.1": {
                 "en": "initial adapter",
                 "de": "Initiale Version"

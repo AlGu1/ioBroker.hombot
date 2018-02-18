@@ -1,9 +1,9 @@
 /*
     ioBroker.hombot Widget-Set
 
-    version: "0.5.0"
+    version: "0.0.2"
 
-    Copyright 10.2015-2016 Alexander Gurtzick<algu1@outlook.de>
+    Copyright 2018 Alexander Gurtzick<algu1@outlook.de>
 
 */
 "use strict";
@@ -11,58 +11,74 @@
 // add translations for edit mode
 if (vis.editMode) {
     $.extend(true, systemDictionary, {
-        "myColor":          {"en": "myColor",       "de": "mainColor",  "ru": "Мой цвет"},
-        "myColor_tooltip":  {
-            "en": "Description of\x0AmyColor",
-            "de": "Beschreibung von\x0AmyColor",
-            "ru": "Описание\x0AmyColor"
-        },
-        "htmlText":         {"en": "htmlText",      "de": "htmlText",   "ru": "htmlText"},
-        "group_extraMyset": {"en": "extraMyset",    "de": "extraMyset", "ru": "extraMyset"},
-        "extraAttr":        {"en": "extraAttr",     "de": "extraAttr",  "ru": "extraAttr"}
+        "group_showvalues": 	{"en": "Show values",   "de": "Werte anzeigen"},
+        "group_showbuttons": 	{"en": "Show buttons",  "de": "Schaltflächen anzeigen"},
+		"showIcon":      		{"en": "Icon", 			"de": "Bild"},
+		"showOnline":      		{"en": "Online", 		"de": "Verbunden"},
+ 		"showButtonStart":      {"en": "Start", 		"de": "Start"},
+ 		"showButtonStop":      	{"en": "Stop", 			"de": "Stop"},
+ 		"showButtonHome":      	{"en": "Go home", 		"de": "Zur Basis"},
+ 		"showButtonMode":      	{"en": "Mode", 			"de": "Modus"},
+ 		"showButtonRepeat":     {"en": "Repeat", 		"de": "Repeat"},
+ 		"showButtonTurbo":      {"en": "Turbo", 		"de": "Turbo"},
+ 		"showBattery":      	{"en": "Battery", 		"de": "Batterie"},
+        "showStatus":       	{"en": "Status",      	"de": "Status"},
+        "showLastClean":    	{"en": "Last clean",    "de": "Letzte Reinigung"},
+        "showMode":    			{"en": "Mode",    		"de": "Modus"},
+        "showRepeat":    		{"en": "Repeate",   	"de": "Repeate"},
+        "showTurbo":    		{"en": "Turbo", 	   	"de": "Turbo"}	
     });
 }
 
 // add translations for non-edit mode
 $.extend(true, systemDictionary, {
-    "Instance":  {"en": "Instance", "de": "Instanz", "ru": "Инстанция"}
+    "Instance":  {"en": "Instance", "de": "Instanz"},
+	"Batterie":  {"en": "Battery", "de": "Batterie"},
+	"Status":  {"en": "Status", "de": "Status"},
+	"Letzte Reinig.":  {"en": "Last clean", "de": "Letzte Reinig."},
+	"Modus":  {"en": "Mode", "de": "Modus"},
+	"Repeat":  {"en": "Repeat", "de": "Repeat"},
+	"Turbo":  {"en": "Turbo", "de": "Turbo"}
 });
 
 // this code can be placed directly in hombot.html
 vis.binds.hombot = {
-    version: "0.5.0",
+    version: "0.0.3",
     showVersion: function () {
         if (vis.binds.hombot.version) {
             console.log('Version hombot: ' + vis.binds.hombot.version);
             vis.binds.hombot.version = null;
         }
     },
-	createWidget: function (widgetID, view, data, style) {
+	bindData: function (widgetID, view, data, style) {
         var $div = $('#' + widgetID);
         // if nothing found => wait
         if (!$div.length) {
             return setTimeout(function () {
-                vis.binds.hombot.createWidget(widgetID, view, data, style);
+                vis.binds.hombot.bindData(widgetID, view, data, style);
             }, 100);
         }
-
-        var text = '';
-        text += 'OID: ' + data.oid + '</div><br>';
-        text += 'OID value: <span class="myset-value">' + vis.states[data.oid + '.val'] + '</span><br>';
-        text += 'Color: <span style="color: ' + data.myColor + '">' + data.myColor + '</span><br>';
-        text += 'extraAttr: ' + data.extraAttr + '<br>';
-        text += 'Browser instance: ' + vis.instance + '<br>';
-        text += 'htmlText: <textarea readonly style="width:100%">' + (data.htmlText || '') + '</textarea><br>';
-
-        $('#' + widgetID).html(text);
-
         // subscribe on updates of value
         if (data.oid) {
-            vis.states.bind(data.oid + '.val', function (e, newVal, oldVal) {
-                $div.find('.hombot-value').html(newVal);
+            vis.states.bind(data.oid + '.states.battery.val', function (e, newVal, oldVal) {
+                $div.find('#hombot-battery').html(newVal + '&nbsp;%');
+            });
+			vis.states.bind(data.oid + '.states.status.val', function (e, newVal, oldVal) {
+                $div.find('#hombot-status').html(newVal);
+            });
+			vis.states.bind(data.oid + '.states.lastClean.val', function (e, newVal, oldVal) {
+                $div.find('#hombot-lastClean').html(newVal);
+            });
+			vis.states.bind(data.oid + '.states.mode.val', function (e, newVal, oldVal) {
+                $div.find('#hombot-mode').html(newVal);
+            });
+			vis.states.bind(data.oid + '.states.repeat.val', function (e, newVal, oldVal) {
+                $div.find('#hombot-repeat').html(newVal);
+            });
+			vis.states.bind(data.oid + '.states.turbo.val', function (e, newVal, oldVal) {
+                $div.find('#hombot-turbo').html(newVal);
             });
         }
     }
 };
-	
 vis.binds.hombot.showVersion();
