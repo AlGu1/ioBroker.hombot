@@ -9,6 +9,9 @@ Dieser Adapter ermöglicht die Steuerung und das Auslesen eines LG HomBot Staubs
 
 ## Changelog
 
+### 0.0.2
+* (AlGu1) Add many functions and vis widget
+
 ### 0.0.1
 * (AlGu1) initial release
 
