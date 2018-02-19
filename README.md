@@ -7,7 +7,16 @@ Dieser Adapter ermöglicht die Steuerung und das Auslesen eines LG HomBot Staubs
 ## Requirements
 * Für die Nutzung dieses Adapters ist der WLAN Hack (http://www.roboter-forum.com/showthread.php?10009-LG-Hombot-3-0-WLAN-amp-Kamera-Steuerung-per-Weboberfläche) erforderlich.
 
+## Configuration
+* Für die Konfiguration muss mindestens die URL (mit Port) eingetragen werden. Das Polling und dessen Intervall ist optional und wird genutzt um die Status-Werte auszulesen.
+![Screenshot](img/settings.png)
+* Das Vis-Widget kann für die Steuerung und Anzeige der Statuswerte benutzt werden. Dort muss als Object.Id
+![Screenshot](img/widget.png)
+
 ## Changelog
+
+### 0.0.3
+* (AlGu1) Extend ReadMe
 
 ### 0.0.2
 * (AlGu1) Add many functions and vis widget
