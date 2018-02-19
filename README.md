@@ -11,6 +11,7 @@ Dieser Adapter ermöglicht die Steuerung und das Auslesen eines LG HomBot Staubs
 * Für die Konfiguration muss mindestens die URL (mit Port) eingetragen werden. Das Polling und dessen Intervall ist optional und wird genutzt um die Status-Werte auszulesen.
 ![Screenshot](img/settings.png)
 * Das Vis-Widget kann für die Steuerung und Anzeige der Statuswerte benutzt werden. Dort muss als Object ID z.B. hombot.0 eingetragen werden.
+
 ![Screenshot](img/widget.png)
 
 ## Changelog
