@@ -1,4 +1,4 @@
-![Logo]<img src="admin/hombot.png" width="200" />
+<img src="admin/hombot.png" width="200"></img>
 # ioBroker.hombot
 =================
 
