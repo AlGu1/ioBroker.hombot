@@ -15,7 +15,7 @@ Dieser Adapter ermöglicht die Steuerung und das Auslesen eines LG HomBot Staubs
    ![Screenshot](img/widget.png)
 
 ## Todo
-* Weitere Commands einbauen (Stimme, Name ändern, Manuelle Steuerung)
+* Weitere Kommandos einbauen (Stimme, Name ändern, Manuelle Steuerung)
 * Widget Verbindungs-Anzeige richtig implementieren
 * Weiteres Widget für Kamerabild
 * Weiteres Widget für letzte Map
