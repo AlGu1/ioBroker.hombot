@@ -148,7 +148,6 @@ function main() {
 	{"JOY":""BACKWARD_LEFT""} = links zurück
 	{"JOY":""BACKWARD_RIGHT""} = rechtszurück
 	{"JOY":""RELEASE""} = Steuerung beenden?
-	{"DIAGNOSIS":"STOP"} = Diagnose beenden
 	*/
 	
     adapter.subscribeStates('*');
