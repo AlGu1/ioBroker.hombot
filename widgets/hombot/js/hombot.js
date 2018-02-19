@@ -1,7 +1,7 @@
 /*
     ioBroker.hombot Widget-Set
 
-    version: "0.0.2"
+    version: "0.0.3"
 
     Copyright 2018 Alexander Gurtzick<algu1@outlook.de>
 
@@ -60,6 +60,13 @@ vis.binds.hombot = {
         }
         // subscribe on updates of value
         if (data.oid) {
+			vis.states.bind(data.oid + '.info.connection.val', function (e, newVal, oldVal) {
+                var conn = 'widgets/hombot/img/offline.png';
+				if (vis.states[data.oid + '.info.connection.val'] === true) {
+					conn = 'widgets/hombot/img/online.png';
+				}
+				$div.find('#hombot-connection').attr('src', conn);
+            });
             vis.states.bind(data.oid + '.states.battery.val', function (e, newVal, oldVal) {
                 $div.find('#hombot-battery').html(newVal + '&nbsp;%');
             });
