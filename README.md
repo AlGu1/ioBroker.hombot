@@ -2,7 +2,7 @@
 # ioBroker.hombot
 =================
 
-Dieser Adapter ermöglicht die Steuerung und das Auslesen eines LG HomBot Staubsauger-Roboters bei dem der WLAN-Hack installiert ist.
+Dieser Adapter ermöglicht die Steuerung und das Auslesen eines LG HomBot Staubsauger-Roboters bei dem der WLAN-Hack installiert ist. Das Widget kann für die Steuerung und Anzeige der Statuswerte in Vis benutzt werden.
 
 ## Requirements
 * Für die Nutzung dieses Adapters ist der WLAN Hack (http://www.roboter-forum.com/showthread.php?10009-LG-Hombot-3-0-WLAN-amp-Kamera-Steuerung-per-Weboberfläche) erforderlich.
@@ -11,7 +11,7 @@ Dieser Adapter ermöglicht die Steuerung und das Auslesen eines LG HomBot Staubs
 * Für die Konfiguration muss mindestens die URL (mit Port) eingetragen werden. Das Polling und dessen Intervall ist optional und wird genutzt um die Status-Werte auszulesen.
 
 ![Screenshot](img/settings.png)
-* Das Vis-Widget kann für die Steuerung und Anzeige der Statuswerte benutzt werden. Dort muss als Object ID z.B. hombot.0 eingetragen werden.
+* In den Einstellungen des Vis-Widget muss als Object ID z.B. "hombot.0" eingetragen werden.
 
 ![Screenshot](img/widget.png)
 
