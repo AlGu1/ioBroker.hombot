@@ -19,6 +19,8 @@ Dieser Adapter ermöglicht die Steuerung und das Auslesen eines LG HomBot Staubs
 * Weitere Kommandos einbauen (Stimme, Name ändern, Manuelle Steuerung)
 * Weiteres Widget für Kamerabild
 * Weiteres Widget für letzte Map
+* Travis-CI/AppVeyor Tests einbauen
+* 
 
 ## Changelog
 
