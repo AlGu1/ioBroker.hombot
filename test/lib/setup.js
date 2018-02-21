@@ -487,7 +487,8 @@ function startAdapter(objects, states, callback) {
 }
 
 function startController(isStartAdapter, onObjectChange, onStateChange, callback) {
-    if (typeof isStartAdapter === 'function') {
+    console.log('startController called...');
+	if (typeof isStartAdapter === 'function') {
         callback = onStateChange;
         onStateChange = onObjectChange;
         onObjectChange = isStartAdapter;
