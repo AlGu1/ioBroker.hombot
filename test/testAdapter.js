@@ -85,16 +85,10 @@ describe('Test ' + adapterShortName + ' adapter', function() {
 
             //config.native.dbtype   = 'sqlite';
 
-			console.log('Call setAdapterConfig...');
             setup.setAdapterConfig(config.common, config.native);
 
-			console.log('Call startController...');
             setup.startController(true, function(id, obj) {}, function (id, state) {
-				console.log('Inner Function of startController');
-                   if (onStateChanged) {
-					   console.log('Call onStateChanged with id: ' + id + ', state: ' + state);
-					   onStateChanged(id, state);
-				   }
+                    if (onStateChanged) onStateChanged(id, state);
                 },
                 function (_objects, _states) {
                     objects = _objects;
