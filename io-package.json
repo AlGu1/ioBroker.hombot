@@ -1,8 +1,12 @@
 {
     "common": {
         "name": "hombot",
-        "version": "0.0.4",
+        "version": "0.0.5",
         "news": {
+			"0.0.5": {
+                "en": "Adding test with Travis-CI and AppVeyor",
+                "de": "Tests mit Travis-CI and AppVeyor hinzugefügt"
+            },
 			"0.0.4": {
                 "en": "Fix widget connection state icon",
                 "de": "Fehler beim Widget Verbindungs-Icon behoben"

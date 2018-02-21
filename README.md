@@ -33,6 +33,9 @@ Dieser Adapter ermöglicht die Steuerung und das Auslesen eines LG HomBot Staubs
 
 ## Changelog
 
+### 0.0.5
+* (AlGu1) Adding test with Travis-CI and AppVeyor
+
 ### 0.0.4
 * (AlGu1) Fix widget connection state icon
 

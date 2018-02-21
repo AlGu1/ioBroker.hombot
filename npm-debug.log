@@ -1,0 +1,116 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'publish' ]
+2 info using npm@3.10.9
+3 info using node@v7.2.0
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   escapedName: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: 'C:\\git\\ioBroker.hombot',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory C:\Users\alexa\AppData\Roaming\npm-cache\iobroker.hombot\0.0.4\package.tgz not in flight; packing
+9 verbose correctMkdir C:\Users\alexa\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+10 info lifecycle iobroker.hombot@0.0.4~prepublish: iobroker.hombot@0.0.4
+11 silly lifecycle iobroker.hombot@0.0.4~prepublish: no script for prepublish, continuing
+12 verbose tar pack [ 'C:\\Users\\alexa\\AppData\\Roaming\\npm-cache\\iobroker.hombot\\0.0.4\\package.tgz',
+12 verbose tar pack   'C:\\git\\ioBroker.hombot' ]
+13 verbose tarball C:\Users\alexa\AppData\Roaming\npm-cache\iobroker.hombot\0.0.4\package.tgz
+14 verbose folder C:\git\ioBroker.hombot
+15 verbose addLocalTarball adding from inside cache C:\Users\alexa\AppData\Roaming\npm-cache\iobroker.hombot\0.0.4\package.tgz
+16 verbose correctMkdir C:\Users\alexa\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+17 silly cache afterAdd iobroker.hombot@0.0.4
+18 verbose afterAdd C:\Users\alexa\AppData\Roaming\npm-cache\iobroker.hombot\0.0.4\package\package.json not in flight; writing
+19 verbose correctMkdir C:\Users\alexa\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+20 verbose afterAdd C:\Users\alexa\AppData\Roaming\npm-cache\iobroker.hombot\0.0.4\package\package.json written
+21 silly publish { name: 'iobroker.hombot',
+21 silly publish   version: '0.0.4',
+21 silly publish   description: 'LG HomBot Adapter',
+21 silly publish   author: { name: 'Alexander Gurtzick', email: 'algu1@outlook.de' },
+21 silly publish   contributors: [ { name: 'Alexander Gurtzick', email: 'algu1@outlook.de' } ],
+21 silly publish   homepage: 'https://github.com/AlGu1/ioBroker.hombot',
+21 silly publish   license: 'MIT',
+21 silly publish   keywords: [ 'ioBroker', 'hombot', 'Smart Home', 'home automation' ],
+21 silly publish   repository:
+21 silly publish    { type: 'git',
+21 silly publish      url: 'git+https://github.com/AlGu1/ioBroker.hombot.git' },
+21 silly publish   dependencies: {},
+21 silly publish   devDependencies:
+21 silly publish    { gulp: '^3.9.1',
+21 silly publish      mocha: '^4.1.0',
+21 silly publish      chai: '^4.1.2',
+21 silly publish      request: '^2.83.0' },
+21 silly publish   main: 'main.js',
+21 silly publish   scripts: { test: 'node node_modules/mocha/bin/mocha --exit' },
+21 silly publish   bugs: { url: 'https://github.com/AlGu1/ioBroker.hombot/issues' },
+21 silly publish   readmeFilename: 'README.md',
+21 silly publish   readme: '<img src="admin/hombot.png" width="200"></img>\r\n\r\n[![NPM version](http://img.shields.io/npm/v/iobroker.hombot.svg)](https://www.npmjs.com/package/iobroker.hombot)\r\n[![Downloads](https://img.shields.io/npm/dm/iobroker.hombot.svg)](https://www.npmjs.com/package/iobroker.hombot)\r\n**Tests:** Linux/Mac: [![Travis-CI](https://img.shields.io/travis/AlGu1/ioBroker.hombot/master.svg)](https://travis-ci.org/AlGu1/ioBroker.hombot)\r\nWindows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/AlGu1/ioBroker.hombot?branch=master&svg=true)](https://ci.appveyor.com/project/AlGu1/iobroker-hombot)\r\n\r\n\r\n[![NPM](https://nodei.co/npm/iobroker.hombot.png?downloads=true)](https://nodei.co/npm/iobroker.hombot/)\r\n\r\n# ioBroker.hombot\r\n=================\r\n\r\nDieser Adapter ermöglicht die Steuerung und das Auslesen eines LG HomBot Staubsauger-Roboters bei dem der WLAN-Hack installiert ist. Das Widget kann für die Steuerung und Anzeige der Statuswerte in Vis benutzt werden.\r\n\r\n## Requirements\r\n* Für die Nutzung dieses Adapters ist der WLAN Hack (http://www.roboter-forum.com/showthread.php?10009-LG-Hombot-3-0-WLAN-amp-Kamera-Steuerung-per-Weboberfläche) erforderlich.\r\n\r\n## Configuration\r\n* Für die Konfiguration muss mindestens die URL (mit Port) eingetragen werden. Das Polling und dessen Intervall ist optional und wird genutzt um die Status-Werte auszulesen.\r\n   ![Screenshot](img/settings.png)\r\n\r\n* In den Einstellungen des Vis-Widget muss als Object ID z.B. "hombot.0" eingetragen werden.\r\n   ![Screenshot](img/widget.png)\r\n\r\n## Todo\r\n* Einstellungs-Seiten überarbeiten\r\n* Weitere Kommandos einbauen (Stimme, Name ändern, Manuelle Steuerung)\r\n* Weiteres Widget für Kamerabild\r\n* Weiteres Widget für letzte Map\r\n* Travis-CI/AppVeyor Tests einbauen\r\n* \r\n\r\n## Changelog\r\n\r\n### 0.0.4\r\n* (AlGu1) Fix widget connection state icon\r\n\r\n### 0.0.3\r\n* (AlGu1) Extend ReadMe\r\n\r\n### 0.0.2\r\n* (AlGu1) Add many functions and vis widget\r\n\r\n### 0.0.1\r\n* (AlGu1) initial release\r\n\r\n## License\r\nThe MIT License (MIT)\r\n\r\nCopyright (c) 2018 Alexander Gurtzick <algu1@outlook.de>\r\n\r\nPermission is hereby granted, free of charge, to any person obtaining a copy\r\nof this software and associated documentation files (the "Software"), to deal\r\nin the Software without restriction, including without limitation the rights\r\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\r\ncopies of the Software, and to permit persons to whom the Software is\r\nfurnished to do so, subject to the following conditions:\r\n\r\nThe above copyright notice and this permission notice shall be included in\r\nall copies or substantial portions of the Software.\r\n\r\nTHE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\r\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\r\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\r\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\r\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\r\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\r\nTHE SOFTWARE.\r\n',
+21 silly publish   gitHead: '3d2281bbb19241a33d4b9b6866aefb549dc20fde',
+21 silly publish   _id: 'iobroker.hombot@0.0.4',
+21 silly publish   _shasum: '94d3d3e044a0b7037b3252fae261545501306cf6',
+21 silly publish   _from: '.' }
+22 verbose getPublishConfig undefined
+23 silly mapToRegistry name iobroker.hombot
+24 silly mapToRegistry using default registry
+25 silly mapToRegistry registry https://registry.npmjs.org/
+26 silly mapToRegistry data Result {
+26 silly mapToRegistry   raw: 'iobroker.hombot',
+26 silly mapToRegistry   scope: null,
+26 silly mapToRegistry   escapedName: 'iobroker.hombot',
+26 silly mapToRegistry   name: 'iobroker.hombot',
+26 silly mapToRegistry   rawSpec: '',
+26 silly mapToRegistry   spec: 'latest',
+26 silly mapToRegistry   type: 'tag' }
+27 silly mapToRegistry uri https://registry.npmjs.org/iobroker.hombot
+28 verbose publish registryBase https://registry.npmjs.org/
+29 silly publish uploading C:\Users\alexa\AppData\Roaming\npm-cache\iobroker.hombot\0.0.4\package.tgz
+30 verbose request uri https://registry.npmjs.org/iobroker.hombot
+31 verbose request sending authorization for write operation
+32 info attempt registry request try #1 at 09:28:16
+33 verbose request using bearer token for auth
+34 verbose request id bdd3227066d07e5c
+35 http request PUT https://registry.npmjs.org/iobroker.hombot
+36 http 403 https://registry.npmjs.org/iobroker.hombot
+37 verbose headers { 'content-type': 'application/json',
+37 verbose headers   'cache-control': 'max-age=300',
+37 verbose headers   'content-length': '93',
+37 verbose headers   'accept-ranges': 'bytes',
+37 verbose headers   date: 'Wed, 21 Feb 2018 08:28:20 GMT',
+37 verbose headers   via: '1.1 varnish',
+37 verbose headers   connection: 'keep-alive',
+37 verbose headers   'x-served-by': 'cache-hhn1550-HHN',
+37 verbose headers   'x-cache': 'MISS',
+37 verbose headers   'x-cache-hits': '0',
+37 verbose headers   'x-timer': 'S1519201699.540072,VS0,VE1876',
+37 verbose headers   vary: 'Accept-Encoding, Accept' }
+38 verbose request invalidating C:\Users\alexa\AppData\Roaming\npm-cache\registry.npmjs.org\iobroker.hombot on PUT
+39 error publish Failed PUT 403
+40 verbose stack Error: You cannot publish over the previously published versions: 0.0.4. : iobroker.hombot
+40 verbose stack     at makeError (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:302:12)
+40 verbose stack     at CachingRegistryClient.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:290:14)
+40 verbose stack     at Request._callback (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:210:14)
+40 verbose stack     at Request.self.callback (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:187:22)
+40 verbose stack     at emitTwo (events.js:106:13)
+40 verbose stack     at Request.emit (events.js:191:7)
+40 verbose stack     at Request.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:1048:10)
+40 verbose stack     at emitOne (events.js:96:13)
+40 verbose stack     at Request.emit (events.js:188:7)
+40 verbose stack     at IncomingMessage.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:969:12)
+41 verbose statusCode 403
+42 verbose pkgid iobroker.hombot
+43 verbose cwd C:\git\ioBroker.hombot
+44 error Windows_NT 10.0.16299
+45 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "publish"
+46 error node v7.2.0
+47 error npm  v3.10.9
+48 error code E403
+49 error You cannot publish over the previously published versions: 0.0.4. : iobroker.hombot
+50 error If you need help, you may report this error at:
+50 error     <https://github.com/npm/npm/issues>
+51 verbose exit [ 1, true ]
