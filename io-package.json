@@ -1,8 +1,12 @@
 {
     "common": {
         "name": "hombot",
-        "version": "0.0.5",
+        "version": "0.0.6",
         "news": {
+			"0.0.6": {
+                "en": "Admin3 changes",
+                "de": "Admin3 Änderungen"
+            },
 			"0.0.5": {
                 "en": "Adding test with Travis-CI and AppVeyor",
                 "de": "Tests mit Travis-CI and AppVeyor hinzugefügt"
