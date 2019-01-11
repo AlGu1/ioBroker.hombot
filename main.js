@@ -237,7 +237,7 @@ function pollDataFromBot() {
 		}
 		else {
 			adapter.setState('info.connection', false);
-			adapter.log.error('Polling status.html error: ' + error + ', body: ' + body);
+			//adapter.log.error('Polling status.html error: ' + error + ', body: ' + body);
 		}
 	});
 }

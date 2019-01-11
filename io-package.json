@@ -3,6 +3,10 @@
         "name": "hombot",
         "version": "0.0.6",
         "news": {
+			"0.0.7": {
+                "en": "Disable error log if hombot not conected",
+                "de": "Deaktivierung der Fehlermeldung wenn der hombot nicht im Netzwerk erreichbar ist"
+            },
 			"0.0.6": {
                 "en": "Admin3 changes",
                 "de": "Admin3 Änderungen"

@@ -31,6 +31,9 @@ Dieser Adapter ermöglicht die Steuerung und das Auslesen eines LG HomBot Staubs
 * 
 
 ## Changelog
+### 0.0.7
+* (AlGu1) Disable error log if hombot not conected
+
 ### 0.0.6
 * (AlGu1) Admin3 changes
 
