@@ -1,8 +1,12 @@
 {
     "common": {
         "name": "hombot",
-        "version": "0.0.7",
+        "version": "0.0.8",
         "news": {
+			"0.0.8": {
+                "en": "Merge pull request and change settings for adapter checker",
+                "de": "Zusammenführen des Codes und anpassen der Einstellungen anhand des automatischen Adapter-Checkers"
+            },
 			"0.0.7": {
                 "en": "Disable error log if hombot not conected",
                 "de": "Deaktivierung der Fehlermeldung wenn der hombot nicht im Netzwerk erreichbar ist"
@@ -32,7 +36,7 @@
                 "de": "Initiale Version"
             }
         },
-		"title": "LG HomBot Adapter",
+		"title": "LG HomBot adapter",
         "titleLang": {
             "en": "LG HomBot adapter",
             "de": "LG HomBot Adapter"
