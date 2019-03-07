@@ -36,14 +36,14 @@
                 "de": "Initiale Version"
             }
         },
-		"title": "LG HomBot adapter",
+		"title": "LG HomBot",
         "titleLang": {
-            "en": "LG HomBot adapter",
-            "de": "LG HomBot Adapter"
+            "en": "LG HomBot",
+            "de": "LG HomBot"
         },
         "desc": {
-            "en": "LG HomBot adapter",
-            "de": "LG HomBot Adapter"
+            "en": "LG HomBot",
+            "de": "LG HomBot"
         },
         "authors": [
             "Alexander Gurtzick <algu1@outlook.de>"

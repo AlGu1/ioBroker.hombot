@@ -1,7 +1,7 @@
 {
   "name": "iobroker.hombot",
   "version": "0.0.8",
-  "description": "LG HomBot adapter",
+  "description": "LG HomBot",
   "author": {
     "name": "Alexander Gurtzick",
     "email": "algu1@outlook.de"
