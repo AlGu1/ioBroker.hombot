@@ -1,6 +1,6 @@
 <img src="admin/hombot.png" width="200"></img>
 
-[![NPM version](http://img.shields.io/npm/v/iobroker.hombot.svg)](https://www.npmjs.com/package/iobroker.hombot)
+![Number of Installations](http://iobroker.live/badges/hombot-installed.svg) ![Number of Installations](http://iobroker.live/badges/hombot-stable.svg) [![NPM version](http://img.shields.io/npm/v/iobroker.hombot.svg)](https://www.npmjs.com/package/iobroker.hombot)
 [![Downloads](https://img.shields.io/npm/dm/iobroker.hombot.svg)](https://www.npmjs.com/package/iobroker.hombot)
 **Tests:** Linux/Mac: [![Travis-CI](https://img.shields.io/travis/AlGu1/ioBroker.hombot/master.svg)](https://travis-ci.org/AlGu1/ioBroker.hombot)
 Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/AlGu1/ioBroker.hombot?branch=master&svg=true)](https://ci.appveyor.com/project/AlGu1/iobroker-hombot)
