@@ -1,8 +1,12 @@
 {
     "common": {
         "name": "hombot",
-        "version": "0.1.1",
+        "version": "0.1.2",
         "news": {
+			"0.1.2": {
+                "en": "Latest repository settings and vis widget JS changes",
+                "de": "Latest repository Einstellungen und VIS Widget JavaScript Anpassungen"
+            },
 			"0.1.1": {
                 "en": "Fix syntax error in main.js",
                 "de": "Fehler bei der Syntax in der main.js behoben"
@@ -60,10 +64,6 @@
         "authors": [
             "Alexander Gurtzick <algu1@outlook.de>"
         ],
-        "docs": {
-            "en": "docs/en/admin.md",
-            "de": "docs/de/admin.md"
-        },
 		"compact": true,
         "license": "MIT",
         "platform": "Javascript/Node.js",

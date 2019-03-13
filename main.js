@@ -121,12 +121,12 @@ function main() {
 	}
 
 	//Adpater status:
-    adapter.setObjectNotExists('info.connection', { type: 'state', common: { name: 'Connection', type: 'boolean', role: 'indicator' }, native: {} });
+    adapter.setObjectNotExists('info.connection', { type: 'state', common: { name: 'Connection', type: 'boolean', role: 'indicator.connected' }, native: {} });
 	
 	//HomBot states:
 	adapter.setObjectNotExists('states.status', { type: 'state', common: { name: 'HomBot Status', desc: 'Wert: z.B. CHARGING', type: 'string', role: 'value' }});
 	adapter.setObjectNotExists('states.lastClean', { type: 'state', common: { name: 'HomBot Last-Clean', desc: 'Wert: z.B. 2017/01/17/19/48/57.468252', type: 'string', role: 'value' }});
-	adapter.setObjectNotExists('states.battery', { type: 'state', common: { name: 'HomBot Batt-Perc', desc: 'Wert: z.B. 60', type: 'number', role: 'value' }});
+	adapter.setObjectNotExists('states.battery', { type: 'state', common: { name: 'HomBot Batt-Perc', desc: 'Wert: z.B. 60', type: 'number', role: 'value.battery' }});
 	adapter.setObjectNotExists('states.turbo', { type: 'state', common: { name: 'HomBot Turbo', desc: 'Werte: true=aktiviert, false=deaktiviert', type: 'boolean', role: 'value' }});
 	adapter.setObjectNotExists('states.repeat', { type: 'state', common: { name: 'HomBot Repeat', desc: 'Werte: true=aktiviert, false=deaktiviert', type: 'boolean', role: 'value' }});
 	adapter.setObjectNotExists('states.mode', { type: 'state', common: { name: 'HomBot Mode', desc: 'Wert: z.B. ZZ', type: 'string', role: 'value' }});

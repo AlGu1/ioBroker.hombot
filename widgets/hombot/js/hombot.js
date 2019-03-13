@@ -8,6 +8,8 @@
 */
 "use strict";
 
+var dataCounter = 3;
+
 // add translations for edit mode
 if (vis.editMode) {
     $.extend(true, systemDictionary, {
@@ -51,41 +53,77 @@ vis.binds.hombot = {
         }
     },
 	bindData: function (widgetID, view, data, style) {
-        var $div = $('#' + widgetID);
+        var div = $('#' + widgetID);
         // if nothing found => wait
-        if (!$div.length) {
+        if (!div.length) {
             return setTimeout(function () {
                 vis.binds.hombot.bindData(widgetID, view, data, style);
-            }, 100);
+            }, 1000);
         }
         // subscribe on updates of value
         if (data.oid) {
 			vis.states.bind(data.oid + '.info.connection.val', function (e, newVal, oldVal) {
-                var conn = 'widgets/hombot/img/offline.png';
-				if (vis.states[data.oid + '.info.connection.val'] === true) {
-					conn = 'widgets/hombot/img/online.png';
-				}
-				$div.find('#hombot-connection').attr('src', conn);
+                setConnectionState(data, div);
             });
             vis.states.bind(data.oid + '.states.battery.val', function (e, newVal, oldVal) {
-                $div.find('#hombot-battery').html(newVal + '&nbsp;%');
+                setStateValue('battery', '&nbsp;%', data, div);
             });
 			vis.states.bind(data.oid + '.states.status.val', function (e, newVal, oldVal) {
-                $div.find('#hombot-status').html(newVal);
+                setStateValue('status', null, data, div);
             });
 			vis.states.bind(data.oid + '.states.lastClean.val', function (e, newVal, oldVal) {
-                $div.find('#hombot-lastClean').html(newVal);
+				setStateValue('lastClean', null, data, div);
             });
 			vis.states.bind(data.oid + '.states.mode.val', function (e, newVal, oldVal) {
-                $div.find('#hombot-mode').html(newVal);
+				setStateValue('mode', null, data, div);
             });
 			vis.states.bind(data.oid + '.states.repeat.val', function (e, newVal, oldVal) {
-                $div.find('#hombot-repeat').html(newVal);
+				setStateValue('repeat', null, data, div);
             });
 			vis.states.bind(data.oid + '.states.turbo.val', function (e, newVal, oldVal) {
-                $div.find('#hombot-turbo').html(newVal);
+				setStateValue('turbo', null, data, div);
             });
+			
+			setAllData(data, div);
         }
     }
 };
+
+function setAllData(data, div) {
+	if (vis.states[data.oid + '.info.connection.val'] === undefined && dataCounter > 0) {
+		dataCounter--;
+		return setTimeout(function () {
+			setAllData(data, div);
+		}, 2000);
+	}
+	setConnectionState(data, div);
+	setStateValue('battery', '&nbsp;%', data, div);
+	setStateValue('status', null, data, div);
+	setStateValue('lastClean', null, data, div);
+	setStateValue('mode', null, data, div);
+	setStateValue('repeat', null, data, div);
+	setStateValue('turbo', null, data, div);
+}
+
+function setConnectionState(data, div) {
+	var conn = 'widgets/hombot/img/offline.png';
+	if (vis.states[data.oid + '.info.connection.val'] === true) {
+		conn = 'widgets/hombot/img/online.png';
+	}
+	div.find('#hombot-connection').attr('src', conn);
+}
+function setStateValue(stateId, extension, data, div) {
+	var value = vis.states[data.oid + '.states.' + stateId + '.val'];
+	if (value !== undefined) {
+		if(!extension) {
+			extension = '';
+		}
+		div.find('#hombot-' + stateId).html(value + extension);
+	}
+	else {
+		//setTimeout aufrufen und noch mal versuchen...
+		
+	}
+}
+
 vis.binds.hombot.showVersion();
