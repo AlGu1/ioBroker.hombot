@@ -1,8 +1,12 @@
 {
     "common": {
         "name": "hombot",
-        "version": "0.1.0",
+        "version": "0.1.1",
         "news": {
+			"0.1.1": {
+                "en": "Fix syntax error in main.js",
+                "de": "Fehler bei der Syntax in der main.js behoben"
+            },
 			"0.1.0": {
                 "en": "Add JS-Controller compact mode",
                 "de": "JS-Controller compact mode hinzugefügt"
