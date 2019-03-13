@@ -1,4 +1,4 @@
-<img src="admin/hombot.png" width="200"></img>
+<img src="admin/hombot.png"></img>
 
 ![Number of Installations](http://iobroker.live/badges/hombot-installed.svg) ![Number of Installations](http://iobroker.live/badges/hombot-stable.svg) [![NPM version](http://img.shields.io/npm/v/iobroker.hombot.svg)](https://www.npmjs.com/package/iobroker.hombot)
 [![Downloads](https://img.shields.io/npm/dm/iobroker.hombot.svg)](https://www.npmjs.com/package/iobroker.hombot)
@@ -23,7 +23,6 @@ Dieser Adapter ermöglicht die Steuerung und das Auslesen eines LG HomBot Staubs
    ![Screenshot](img/widget.png)
 
 ## Todo
-* Einstellungs-Seiten überarbeiten
 * Weitere Kommandos einbauen (Stimme, Name ändern, Manuelle Steuerung)
 * Weiteres Widget für Kamerabild
 * Weiteres Widget für letzte Map
