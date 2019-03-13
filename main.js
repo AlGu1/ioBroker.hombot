@@ -13,87 +13,99 @@
 /*jslint node: true */
 'use strict';
 
-var utils = require('@iobroker/adapter-core'); // Get common adapter utils
-var adapter = new utils.Adapter('hombot');
-var pollingInterval;
-var req = require('request');
+const utils = require('@iobroker/adapter-core'); // Get common adapter utils
 
-adapter.on('unload', function (callback) {
-    try {
-		clearInterval(pollingInterval);
-		adapter.setState('info.connection', false);
-        adapter.log.debug('adapter is disabled!');
-        callback();
-    } catch (e) {
-        callback();
-    }
-});
+let pollingInterval;
+const req = require('request');
 
-adapter.on('stateChange', function (id, state) {
-	if(id.indexOf('commands.command') !== -1 && state.val !== '') {
-		callBotCommand(state.val);
-	}
-	if(id.indexOf('commands.cleaningStart') !== -1 && state.val === true) {
-		callBotCommand('{"COMMAND":"CLEAN_START"}');
-	}
-	if(id.indexOf('commands.stop') !== -1 && state.val === true) {
-		callBotCommand('{"COMMAND":"PAUSE"}');
-	}
-	if(id.indexOf('commands.goHome') !== -1 && state.val === true) {
-		callBotCommand('{"COMMAND":"HOMING"}');
-	}
-	if(id.indexOf('commands.turbo') !== -1 && state.val === true) {
-		adapter.getState(adapter.namespace + '.states.turbo', function (err, state) {
-			callBotCommand('{"COMMAND":{"TURBO":"' + !state.val + '"}}');
-		});
-	}
-	if(id.indexOf('commands.repeat') !== -1 && state.val === true) {
-		adapter.getState(adapter.namespace + '.states.repeat', function (err, state) {
-			callBotCommand('{"COMMAND":{"REPEAT":"' + !state.val + '"}}');
-		});
-	}
-	if(id.indexOf('commands.mode') !== -1 && state.val !== '') {
-		//adapter.log.debug('StateChange: id=' + id + ', state=' + state.val);
-		switch(state.val) {
-			case '0':
-			callBotCommand('{"COMMAND":{"CLEAN_MODE":"CLEAN_ZZ"}}');
-			break;
-			case '1':
-			callBotCommand('{"COMMAND":{"CLEAN_MODE":"CLEAN_SB"}}');
-			break;
-			case '2':
-			callBotCommand('{"COMMAND":{"CLEAN_MODE":"CLEAN_SPOT"}}');
-			break;
-			default:
-			adapter.getState(adapter.namespace + '.states.mode', function (err, oldState) {
-				if(oldState.val === "ZZ") {
-					callBotCommand('{"COMMAND":{"CLEAN_MODE":"CLEAN_SB"}}');
-					// } else if (oldState.val === "SB") {
-					 // callBotCommand('{"COMMAND":{"CLEAN_MODE":"CLEAN_SPOT"}}');
-				} else {
+let adapter;
+function startAdapter(options) {
+	options = options || {};
+	Object.assign(options, {
+		name: 'hombot',
+		unload: function (callback) {
+            // is called when adapter shuts down - callback has to be called under any circumstances!
+            try {
+                clearInterval(pollingInterval);
+				adapter.setState('info.connection', false);
+				adapter.log.debug('adapter is disabled!');
+                callback();
+            } catch (e) {
+                callback();
+            }
+        },
+		objectChange: function (id, obj) {
+            // is called if a subscribed object changes
+            adapter.log.info('objectChange ' + id + ' ' + JSON.stringify(obj));
+        },
+		stateChange: function (id, state) {
+			if(id.indexOf('commands.command') !== -1 && state.val !== '') {
+				callBotCommand(state.val);
+			}
+			if(id.indexOf('commands.cleaningStart') !== -1 && state.val === true) {
+				callBotCommand('{"COMMAND":"CLEAN_START"}');
+			}
+			if(id.indexOf('commands.stop') !== -1 && state.val === true) {
+				callBotCommand('{"COMMAND":"PAUSE"}');
+			}
+			if(id.indexOf('commands.goHome') !== -1 && state.val === true) {
+				callBotCommand('{"COMMAND":"HOMING"}');
+			}
+			if(id.indexOf('commands.turbo') !== -1 && state.val === true) {
+				adapter.getState(adapter.namespace + '.states.turbo', function (err, state) {
+					callBotCommand('{"COMMAND":{"TURBO":"' + !state.val + '"}}');
+				});
+			}
+			if(id.indexOf('commands.repeat') !== -1 && state.val === true) {
+				adapter.getState(adapter.namespace + '.states.repeat', function (err, state) {
+					callBotCommand('{"COMMAND":{"REPEAT":"' + !state.val + '"}}');
+				});
+			}
+			if(id.indexOf('commands.mode') !== -1 && state.val !== '') {
+				//adapter.log.debug('StateChange: id=' + id + ', state=' + state.val);
+				switch(state.val) {
+					case '0':
 					callBotCommand('{"COMMAND":{"CLEAN_MODE":"CLEAN_ZZ"}}');
+					break;
+					case '1':
+					callBotCommand('{"COMMAND":{"CLEAN_MODE":"CLEAN_SB"}}');
+					break;
+					case '2':
+					callBotCommand('{"COMMAND":{"CLEAN_MODE":"CLEAN_SPOT"}}');
+					break;
+					default:
+					adapter.getState(adapter.namespace + '.states.mode', function (err, oldState) {
+						if(oldState.val === "ZZ") {
+							callBotCommand('{"COMMAND":{"CLEAN_MODE":"CLEAN_SB"}}');
+							// } else if (oldState.val === "SB") {
+							 // callBotCommand('{"COMMAND":{"CLEAN_MODE":"CLEAN_SPOT"}}');
+						} else {
+							callBotCommand('{"COMMAND":{"CLEAN_MODE":"CLEAN_ZZ"}}');
+						}
+					});
+					
+					break;
 				}
-			});
-			
-			break;
+			}
+		},
+		message: function (obj) {
+			if (typeof obj === 'object' && obj.message) {
+				if (obj.command === 'send') {
+					// e.g. send email or pushover or whatever
+					console.log('send command');
+
+					// Send response in callback if required
+					if (obj.callback) adapter.sendTo(obj.from, obj.command, 'Message received', obj.callback);
+				}
+			}
+		},
+		ready: function () {
+			main();
 		}
-	}
-});
+	});
+	adapter = new utils.Adapter(options);
 
-adapter.on('message', function (obj) {
-    if (typeof obj === 'object' && obj.message) {
-        if (obj.command === 'send') {
-            // e.g. send email or pushover or whatever
-            console.log('send command');
-
-            // Send response in callback if required
-            if (obj.callback) adapter.sendTo(obj.from, obj.command, 'Message received', obj.callback);
-        }
-    }
-});
-
-adapter.on('ready', function () {
-    main();
+	return adapter;
 });
 
 function main() {
@@ -263,3 +275,11 @@ function callBotCommand(command) {
 function getHtmlTag(body, tagName) {
     return body.substring(body.indexOf('<' + tagName + '>') + tagName.length + 2, body.indexOf('</' + tagName + '>'));
 }
+
+// If started as allInOne/compact mode => return function to create instance
+if (module && module.parent) {
+    module.exports = startAdapter;
+} else {
+    // or start the instance directly
+    startAdapter();
+} 

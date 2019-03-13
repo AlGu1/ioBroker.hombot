@@ -31,6 +31,12 @@ Dieser Adapter ermöglicht die Steuerung und das Auslesen eines LG HomBot Staubs
 * 
 
 ## Changelog
+### 0.1.0 Add JS-Controller compact mode
+* (AlGu1) 
+
+### 0.0.9
+* (AlGu1) Change settings
+
 ### 0.0.8
 * (AlGu1) Merge pull request and change settings for adapter checker
 
