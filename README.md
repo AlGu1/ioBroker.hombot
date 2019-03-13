@@ -58,7 +58,7 @@ Dieser Adapter ermöglicht die Steuerung und das Auslesen eines LG HomBot Staubs
 ## License
 The MIT License (MIT)
 
-Copyright (c) 2018 Alexander Gurtzick <algu1@outlook.de>
+Copyright (c) 2019 Alexander Gurtzick <algu1@outlook.de>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
