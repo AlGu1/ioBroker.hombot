@@ -88,17 +88,6 @@ function startAdapter(options) {
 				}
 			}
 		},
-		message: function (obj) {
-			if (typeof obj === 'object' && obj.message) {
-				if (obj.command === 'send') {
-					// e.g. send email or pushover or whatever
-					console.log('send command');
-
-					// Send response in callback if required
-					if (obj.callback) adapter.sendTo(obj.from, obj.command, 'Message received', obj.callback);
-				}
-			}
-		},
 		ready: function () {
 			main();
 		}
