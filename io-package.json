@@ -1,8 +1,12 @@
 {
     "common": {
         "name": "hombot",
-        "version": "0.1.2",
+        "version": "0.1.3",
         "news": {
+			"0.1.3": {
+                "en": "Remove message receive handling, because not used",
+                "de": "Nachrichten empfangsmöglichkeit entfernt, weil es nicht benutzt wurde"
+            },
 			"0.1.2": {
                 "en": "Latest repository settings and vis widget JS changes",
                 "de": "Latest repository Einstellungen und VIS Widget JavaScript Anpassungen"
