@@ -77,8 +77,6 @@ function startAdapter(options) {
 					adapter.getState(adapter.namespace + '.states.mode', function (err, oldState) {
 						if(oldState.val === "ZZ") {
 							callBotCommand('{"COMMAND":{"CLEAN_MODE":"CLEAN_SB"}}');
-							// } else if (oldState.val === "SB") {
-							 // callBotCommand('{"COMMAND":{"CLEAN_MODE":"CLEAN_SPOT"}}');
 						} else {
 							callBotCommand('{"COMMAND":{"CLEAN_MODE":"CLEAN_ZZ"}}');
 						}
@@ -201,12 +199,12 @@ function pollDataFromBot() {
 			adapter.setState('states.turbo', turbo);
 
 			//Repeat:
-			var turbo = (getHtmlTag(body, 'repeat') == 'true');
-			adapter.setState('states.repeat', turbo);
+			var repeat = (getHtmlTag(body, 'repeat') == 'true');
+			adapter.setState('states.repeat', repeat);
 			
 			//Mode:
-			var turbo = (getHtmlTag(body, 'mode'));
-			adapter.setState('states.mode', turbo);
+			var mode = (getHtmlTag(body, 'mode'));
+			adapter.setState('states.mode', mode);
 			
 			//Firmware:
 			var version = (getHtmlTag(body, 'version'));
@@ -238,7 +236,19 @@ function pollDataFromBot() {
 		}
 		else {
 			adapter.setState('info.connection', false);
-			//adapter.log.error('Polling status.html error: ' + error + ', body: ' + body);
+			adapter.setState('states.status', '');
+			adapter.setState('states.lastClean', '');
+			adapter.setState('states.battery', 0);
+			adapter.setState('states.turbo', false);
+			adapter.setState('states.repeat', false);
+			adapter.setState('states.mode', '');
+			adapter.setState('states.firmware', '');
+			adapter.setState('states.nickname', '');
+			adapter.setState('states.program', '');
+			adapter.setState('states.cpuidle', 0);
+			adapter.setState('states.cpuuser', 0);
+			adapter.setState('states.cpusys', 0);
+			adapter.setState('states.cpunice', 0);
 		}
 	});
 }
