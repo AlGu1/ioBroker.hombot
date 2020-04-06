@@ -1,91 +1,95 @@
 {
-    "common": {
-        "name": "hombot",
-        "version": "0.1.3",
-        "news": {
-			"0.1.3": {
-                "en": "Remove message receive handling, because not used",
-                "de": "Nachrichten empfangsmöglichkeit entfernt, weil es nicht benutzt wurde"
-            },
-			"0.1.2": {
-                "en": "Latest repository settings and vis widget JS changes",
-                "de": "Latest repository Einstellungen und VIS Widget JavaScript Anpassungen"
-            },
-			"0.1.1": {
-                "en": "Fix syntax error in main.js",
-                "de": "Fehler bei der Syntax in der main.js behoben"
-            },
-			"0.1.0": {
-                "en": "Add JS-Controller compact mode",
-                "de": "JS-Controller compact mode hinzugefügt"
-            },
-			"0.0.9": {
-                "en": "Name changed",
-                "de": "Name geändert"
-            },
-			"0.0.8": {
-                "en": "Merge pull request and change settings for adapter checker",
-                "de": "Zusammenführen des Codes und anpassen der Einstellungen anhand des automatischen Adapter-Checkers"
-            },
-			"0.0.7": {
-                "en": "Disable error log if hombot not conected",
-                "de": "Deaktivierung der Fehlermeldung wenn der hombot nicht im Netzwerk erreichbar ist"
-            },
-			"0.0.6": {
-                "en": "Admin3 changes",
-                "de": "Admin3 Änderungen"
-            },
-			"0.0.5": {
-                "en": "Adding test with Travis-CI and AppVeyor",
-                "de": "Tests mit Travis-CI and AppVeyor hinzugefügt"
-            },
-			"0.0.4": {
-                "en": "Fix widget connection state icon",
-                "de": "Fehler beim Widget Verbindungs-Icon behoben"
-            },
-			"0.0.3": {
-                "en": "Extend ReadMe",
-                "de": "ReadMe erweitert"
-            },
-			"0.0.2": {
-                "en": "Add many functions and vis widget",
-                "de": "Sehr viele Funktionen und ein Vis-Widget hinzugefügt"
-            },
-            "0.0.1": {
-                "en": "initial adapter",
-                "de": "Initiale Version"
-            }
-        },
-		"title": "LG HomBot",
-        "titleLang": {
-            "en": "LG HomBot",
-            "de": "LG HomBot"
-        },
-        "desc": {
-            "en": "LG HomBot",
-            "de": "LG HomBot"
-        },
-        "authors": [
-            "Alexander Gurtzick <algu1@outlook.de>"
-        ],
-		"compact": true,
-        "license": "MIT",
-        "platform": "Javascript/Node.js",
-        "mode": "daemon",
-        "icon": "hombot.png",
-        "materialize": true,
-        "enabled": true,
-        "extIcon": "https://github.com/AlGu1/ioBroker.hombot/raw/master/admin/hombot.png",
-        "keywords": ["LG HomBot"],
-        "readme": "https://github.com/AlGu1/ioBroker.hombot/blob/master/README.md",
-        "loglevel": "debug",
-        "type": "household",
-        "restartAdapters": ["vis"]
+  "common": {
+    "name": "hombot",
+    "version": "0.1.3",
+    "news": {
+      "0.1.4": {
+        "en": "Setting values changed",
+        "de": "Setzen der Werte optimiert"
+      },
+      "0.1.3": {
+        "en": "Remove message receive handling, because not used",
+        "de": "Nachrichten empfangsmöglichkeit entfernt, weil es nicht benutzt wurde"
+      },
+      "0.1.2": {
+        "en": "Latest repository settings and vis widget JS changes",
+        "de": "Latest repository Einstellungen und VIS Widget JavaScript Anpassungen"
+      },
+      "0.1.1": {
+        "en": "Fix syntax error in main.js",
+        "de": "Fehler bei der Syntax in der main.js behoben"
+      },
+      "0.1.0": {
+        "en": "Add JS-Controller compact mode",
+        "de": "JS-Controller compact mode hinzugefügt"
+      },
+      "0.0.9": {
+        "en": "Name changed",
+        "de": "Name geändert"
+      },
+      "0.0.8": {
+        "en": "Merge pull request and change settings for adapter checker",
+        "de": "Zusammenführen des Codes und anpassen der Einstellungen anhand des automatischen Adapter-Checkers"
+      },
+      "0.0.7": {
+        "en": "Disable error log if hombot not conected",
+        "de": "Deaktivierung der Fehlermeldung wenn der hombot nicht im Netzwerk erreichbar ist"
+      },
+      "0.0.6": {
+        "en": "Admin3 changes",
+        "de": "Admin3 Änderungen"
+      },
+      "0.0.5": {
+        "en": "Adding test with Travis-CI and AppVeyor",
+        "de": "Tests mit Travis-CI and AppVeyor hinzugefügt"
+      },
+      "0.0.4": {
+        "en": "Fix widget connection state icon",
+        "de": "Fehler beim Widget Verbindungs-Icon behoben"
+      },
+      "0.0.3": {
+        "en": "Extend ReadMe",
+        "de": "ReadMe erweitert"
+      },
+      "0.0.2": {
+        "en": "Add many functions and vis widget",
+        "de": "Sehr viele Funktionen und ein Vis-Widget hinzugefügt"
+      },
+      "0.0.1": {
+        "en": "initial adapter",
+        "de": "Initiale Version"
+      }
     },
-    "native": {
-
+    "title": "LG HomBot",
+    "titleLang": {
+      "en": "LG HomBot",
+      "de": "LG HomBot"
     },
-    "objects": [
+    "desc": {
+      "en": "LG HomBot",
+      "de": "LG HomBot"
+    },
+    "authors": [
+      "Alexander Gurtzick <algu1@outlook.de>"
+    ],
+    "compact": true,
+    "license": "MIT",
+    "platform": "Javascript/Node.js",
+    "mode": "daemon",
+    "icon": "hombot.png",
+    "materialize": true,
+    "enabled": true,
+    "extIcon": "https://github.com/AlGu1/ioBroker.hombot/raw/master/admin/hombot.png",
+    "keywords": [ "LG HomBot" ],
+    "readme": "https://github.com/AlGu1/ioBroker.hombot/blob/master/README.md",
+    "loglevel": "debug",
+    "type": "household",
+    "restartAdapters": [ "vis" ]
+  },
+  "native": {
 
-    ]
+  },
+  "objects": [
+
+  ]
 }
